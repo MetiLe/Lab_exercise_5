@@ -92,8 +92,19 @@ function filterTasks(e) {
     
     
     */
+   let searchItem = filter.value;
+    let collectionItems = document.querySelectorAll(".collection-item");
+    collectionItems.forEach((item) => {
+        if (item.textContent.indexOf(searchItem)) {
+            item.style.display = "none";
+        } else {
+            item.style.display = "block";
+        }
+    });
+
 
 }
+
 
 // Remove Task function definition 
 function removeTask(e) {
@@ -112,3 +123,30 @@ function reloadPage() {
     //using the reload fun on location object 
     location.reload();
 }
+function taskSort(){
+    const tasks = document.querySelectorAll('.collection-item')
+    let tasks_container = [];
+    tasks.forEach(task=>{
+             tasks_container.push(task.value);     
+    })
+    tasks_container.sort();
+    if(sortOptions.value == "0"){
+      for(let i=0; i<tasks_container.length; i++ ){
+          tasks.forEach(element => {
+              if( tasks_container[i] == element.value){
+                  taskList.appendChild(element);
+              }
+     })
+      }
+    }
+    else{
+      for(let i=tasks_container.length; i>=0; i-- ){
+          tasks.forEach(element => {
+              if(tasks_container[i] == element.value){
+                  taskList.appendChild(element);
+              }
+     })
+      }
+    }
+      
+  }
