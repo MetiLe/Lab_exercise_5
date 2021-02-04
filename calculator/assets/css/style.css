@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.container .row {
+  width: 50%;
+  display: flex;
+  margin: auto;
+}
+.container .cols {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: #032f3e;
+  color: white;
+  border: 0.8px solid rgba(209, 203, 203, 0.1);
+}
+.container .row div:last-child {
+  background-color: #4E47FF;
+  font-weight: bolder;
+}
+.container div:last-child div:last-child {
+  background-color: yellow;
+  color: black;
+}
+.container .display {
+  text-align: right;
+  background-color: #F1F2EE;
+  flex-direction: column;
+}
+.container .display h3, .container .display h1 {
+  margin-right: 10px;
+}
+.btn-container{
+  margin: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
